@@ -1,0 +1,39 @@
+name: Blocklist broke something
+description: An entry in dns-blocklist.txt broke a feature you wanted.
+title: "[false-positive] "
+labels: ["false-positive"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Negative results matter. A blocklist that quietly breaks things is worse than no blocklist,
+        because people stop trusting the whole approach.
+  - type: input
+    id: entry
+    attributes:
+      label: Which blocklist entry
+      placeholder: "samsungcloudsolution.com"
+    validations:
+      required: true
+  - type: input
+    id: model
+    attributes:
+      label: Device model
+    validations:
+      required: true
+  - type: textarea
+    id: broke
+    attributes:
+      label: What broke
+      description: Be specific. "The Smart Hub would not load apps" beats "it stopped working."
+    validations:
+      required: true
+  - type: dropdown
+    id: confirmed
+    attributes:
+      label: Did unblocking it fix the problem?
+      options:
+        - "Yes, confirmed by unblocking and retesting"
+        - "I assume so, but did not retest"
+    validations:
+      required: true

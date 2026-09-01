@@ -1,0 +1,60 @@
+name: My TV model
+description: Tell us what the privacy menu looks like on your set. Takes about two minutes.
+title: "[model] "
+labels: ["model-report"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This is the most valuable thing you can contribute. Menu paths drift between firmware
+        versions and regions, and nobody can check that remotely. You have a TV; we do not.
+
+        You do not need to fill in everything. A partial report is still useful.
+  - type: input
+    id: model
+    attributes:
+      label: Model
+      description: The exact model number, usually on a sticker on the back.
+      placeholder: "Samsung QN65Q80TAFXZA"
+    validations:
+      required: true
+  - type: input
+    id: firmware
+    attributes:
+      label: Firmware version
+      placeholder: "1462.4"
+  - type: input
+    id: region
+    attributes:
+      label: Country / region
+      description: Menus differ by region more than people expect.
+      placeholder: "Canada"
+  - type: textarea
+    id: path
+    attributes:
+      label: The actual menu path you found
+      description: Where the ACR / viewing-data setting really lives on your set.
+      placeholder: "Settings > All Settings > General & Privacy > Terms & Privacy > Viewing Information Services"
+    validations:
+      required: true
+  - type: dropdown
+    id: matched
+    attributes:
+      label: Did the repo's instructions match your TV?
+      options:
+        - "Yes, exactly"
+        - "Close, but the path was different"
+        - "No, the setting was somewhere else entirely"
+        - "The setting does not exist on my model"
+    validations:
+      required: true
+  - type: textarea
+    id: other
+    attributes:
+      label: Other privacy toggles you found
+      description: Anything we do not list — third-party ACR vendors, voice, ads, diagnostics.
+  - type: textarea
+    id: notes
+    attributes:
+      label: Anything surprising
+      description: Did it re-prompt after an update? Did a toggle turn itself back on? Did opting out break something?

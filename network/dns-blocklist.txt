@@ -1,0 +1,112 @@
+# Unwatched — smart TV telemetry, ACR and advertising hostnames
+# CC0 1.0 / public domain. https://github.com/ahk02x/unwatched
+#
+# TIERS
+#   Tier 1 — ACR, ad and analytics endpoints. Blocking these has no reported effect on playback.
+#   Tier 2 — broader vendor telemetry. Safe for most, may affect a listed feature. Read the notes.
+#   Tier 3 — vendor update/config infrastructure. NOT included by default. Blocking these can brick
+#            features or stop security updates. Listed at the bottom, commented, for reference only.
+#
+# Format is one hostname per line for Pi-hole / AdGuard Home / NextDNS. Subdomains are covered if
+# your resolver does subdomain matching; where it does not, add explicit wildcards.
+
+
+# ============================================================================
+# TIER 1 — ACR, ADVERTISING, ANALYTICS
+# ============================================================================
+
+# ---- Samsung ----
+samsungacr.com
+log-config.samsungacr.com
+samsungads.com
+config.samsungads.com
+ad.samsungadhub.com
+samsungadhub.com
+
+# ---- LG ----
+lgsmartad.com
+us.info.lgsmartad.com
+lgtvsdp.com
+rdx2.lgtvsdp.com
+smartshare.lgtvsdp.com
+lgad.cjpowercast.com
+lgtvcommon.com
+
+# ---- VIZIO (Inscape) ----
+inscape.tv
+inscapedata.com
+hs.vizio.com
+tv.vizio.com
+
+# ---- Roku ----
+logs.roku.com
+scribe.logs.roku.com
+cooper.logs.roku.com
+giga.logs.roku.com
+ads.roku.com
+p.ads.roku.com
+
+# ---- Amazon Fire TV ----
+device-metrics-us.amazon.com
+device-metrics-us-2.amazon.com
+
+# ---- Samba TV (Sony, Philips, TCL, Sharp, Element and others) ----
+samba.tv
+siftd.net
+
+# ---- Alphonso (embedded in some TVs and mobile apps) ----
+alphonso.tv
+
+# ---- Hisense / VIDAA ----
+log.vidaa.com
+
+# ---- Third-party trackers commonly embedded in TV platforms and channels ----
+scorecardresearch.com      # Comscore — audience measurement
+imrworldwide.com           # Nielsen
+moatads.com                # Oracle Moat
+adsafeprotected.com        # Integral Ad Science
+amazon-adsystem.com        # Amazon advertising
+aax-eu.amazon-adsystem.com
+adnxs.com                  # Xandr / AppNexus
+doubleclick.net            # Google advertising
+googlesyndication.com
+googleadservices.com
+app-measurement.com        # Firebase Analytics
+fwmrm.net                  # FreeWheel — video ad serving
+freewheel.tv
+spotxchange.com            # SpotX
+tremorhub.com              # Tremor / Telaria
+innovid.com
+kochava.com                # Mobile/CTV attribution
+branch.io
+flurry.com
+
+
+# ============================================================================
+# TIER 2 — BROADER VENDOR TELEMETRY
+# Safe for most people. Each line notes what it may affect.
+# ============================================================================
+
+samsungrm.net              # Samsung remote management. May affect remote diagnostics.
+samsungosp.com             # Samsung services platform. May affect some Smart Hub features.
+samsungcloudsolution.com   # Mixed telemetry + services. May affect Smart Hub. Test before keeping.
+samsungcloudsolution.net
+lgappstv.com               # LG Content Store. Blocking removes the app store.
+ngfts.lge.com              # LG CDN — also serves firmware. See Tier 3 warning.
+sr.roku.com                # Roku search/recommendation.
+mobileanalytics.us-east-1.amazonaws.com   # Generic AWS mobile analytics, used by many TV apps.
+google-analytics.com       # Breaks nothing on TVs; may affect some app analytics-gated features.
+ssl.google-analytics.com
+
+
+# ============================================================================
+# TIER 3 — DO NOT BLOCK WITHOUT UNDERSTANDING THE TRADE-OFF
+# Commented out deliberately. These carry firmware updates and core config.
+# Blocking them stops security patches, and on some models breaks the TV's setup flow entirely.
+# ============================================================================
+
+# samsungotn.net           # Samsung OTA firmware updates
+# fota.lge.com             # LG firmware over the air
+# api.roku.com             # Roku core API — blocking breaks the device
+# amazon.com               # Never blanket-block; Fire TV will not function
+# googleapis.com           # Never blanket-block; Google TV will not function

@@ -1,0 +1,156 @@
+# Unwatched — machine-readable brand data
+# CC0 1.0 / public domain. https://github.com/ahk02x/unwatched
+#
+# This file is the structured mirror of the brands/*.md pages. It exists so that tools, scripts,
+# search indexes and language models can consume the data without parsing prose.
+# If you change a brand page, change this file in the same commit.
+
+schema_version: 1
+last_reviewed: 2026-09-01
+
+# Vocabulary
+# acr_setting      : the vendor's own name for automatic content recognition. Stable across firmware.
+# paths            : known menu paths, newest first. These drift; the setting name does not.
+# also_disable     : other collection toggles on the same platform.
+# third_party_acr  : ACR vendors the manufacturer may embed in addition to their own.
+# ad_id_reset      : whether the platform exposes an advertising-ID reset.
+# ignores_dhcp_dns : device is reported to bypass router-assigned DNS. Affects whether blocklists work.
+# confidence       : high | medium | low — how well verified this entry is.
+
+brands:
+
+  - id: samsung
+    name: Samsung
+    os: Tizen
+    doc: brands/samsung.md
+    acr_setting: Viewing Information Services
+    paths:
+      - "Settings > All Settings > General & Privacy > Terms & Privacy"   # 2021+
+      - "Settings > Support > Terms & Policy"                             # 2018-2020
+      - "Menu > Smart Hub > Terms & Policy"                               # older
+    also_disable:
+      - Interest-Based Advertising
+      - Voice Recognition Services
+      - Additional Data Collection
+      - SyncPlus and Marketing
+    third_party_acr: []
+    ad_id_reset: true
+    ignores_dhcp_dns: true
+    telemetry_hosts: [samsungacr.com, samsungads.com, samsungadhub.com, samsungrm.net]
+    confidence: high
+
+  - id: lg
+    name: LG
+    os: webOS
+    doc: brands/lg.md
+    acr_setting: Live Plus
+    paths:
+      - "Settings > All Settings > General > System > Additional Settings"  # webOS 6+
+      - "Settings > All Settings > General"                                 # webOS 4-5
+    also_disable:
+      - Limit Ad Tracking      # note: enable this one
+      - Home Promotion
+      - Voice Information
+      - Interest-Based Advertising
+    third_party_acr: []
+    ad_id_reset: true
+    ignores_dhcp_dns: false
+    telemetry_hosts: [lgsmartad.com, lgtvsdp.com, lgad.cjpowercast.com, lgtvcommon.com]
+    confidence: high
+
+  - id: google-tv
+    name: Sony / Philips / TCL / Hisense on Google TV or Android TV
+    os: Google TV / Android TV
+    doc: brands/google-tv.md
+    acr_setting: null   # Google itself does not run ACR; the manufacturer's added vendor does
+    paths:
+      - "Settings > Privacy > Usage & Diagnostics"
+      - "Settings > Privacy > Ads"
+      - "Settings > Apps > See all apps > Show system apps"   # find and disable the ACR package
+    also_disable:
+      - Usage & Diagnostics
+      - Ads Personalization
+      - Location
+      - Google Assistant saved audio
+    third_party_acr: [Samba TV, Alphonso]
+    ad_id_reset: true
+    ignores_dhcp_dns: false
+    telemetry_hosts: [samba.tv, siftd.net, alphonso.tv, app-measurement.com]
+    confidence: medium
+    note: >
+      Two layers. Turning off Google's telemetry does not touch the manufacturer's embedded ACR
+      vendor. Check installed system apps for Samba or Alphonso.
+
+  - id: vizio
+    name: VIZIO
+    os: SmartCast
+    doc: brands/vizio.md
+    acr_setting: Viewing Data
+    acr_setting_aliases: [Smart Interactivity, Inscape]
+    paths:
+      - "Menu > System > Reset & Admin"
+    also_disable:
+      - Limit Ad Tracking
+    third_party_acr: []
+    ad_id_reset: true
+    ignores_dhcp_dns: false
+    telemetry_hosts: [inscape.tv, inscapedata.com, hs.vizio.com, tv.vizio.com]
+    confidence: high
+    note: Subject of the 2017 FTC enforcement action. See evidence/ftc-vizio-2017.md
+
+  - id: roku
+    name: Roku (players and Roku TV sets from TCL, Hisense, Sharp, Philips)
+    os: Roku OS
+    doc: brands/roku.md
+    acr_setting: Smart TV Experience — "Use info from TV inputs"
+    paths:
+      - "Settings > Privacy > Smart TV Experience"
+    also_disable:
+      - Limit ad tracking
+      - Microphone access (set to Never)
+      - Voice recordings
+    third_party_acr: []
+    ad_id_reset: false        # factory reset only
+    ignores_dhcp_dns: false
+    telemetry_hosts: [logs.roku.com, scribe.logs.roku.com, ads.roku.com]
+    confidence: high
+
+  - id: fire-tv
+    name: Amazon Fire TV
+    os: Fire OS
+    doc: brands/fire-tv.md
+    acr_setting: null         # app/device usage collection rather than screen fingerprinting
+    paths:
+      - "Settings > Preferences > Privacy Settings"
+      - "Settings > Preferences > Data Monitoring"
+    also_disable:
+      - Device Usage Data
+      - Collect App Usage Data
+      - Interest-based Ads
+      - Video and Audio Autoplay
+    third_party_acr: []
+    ad_id_reset: true         # account-level, at amazon.com advertising preferences
+    ignores_dhcp_dns: false
+    telemetry_hosts: [device-metrics-us.amazon.com, device-metrics-us-2.amazon.com, amazon-adsystem.com]
+    confidence: high
+    note: Collection is tied to the Amazon account, so a factory reset does not reset the profile.
+
+  - id: vidaa
+    name: Hisense / Toshiba on VIDAA
+    os: VIDAA
+    doc: brands/vidaa.md
+    acr_setting: Viewing Information
+    paths:
+      - "Settings > System > Privacy"
+      - "Settings > Support > Privacy"
+      - "Settings > System > Legal & Privacy"
+    also_disable:
+      - Interest-Based Advertising
+      - Usage & Diagnostics
+      - Voice Services
+    third_party_acr: [Samba TV, Alphonso]
+    ad_id_reset: unknown
+    ignores_dhcp_dns: unknown
+    telemetry_hosts: [log.vidaa.com]
+    confidence: low
+    note: Thinnest coverage in the repo. Menu paths vary substantially by region. Contributions wanted.
