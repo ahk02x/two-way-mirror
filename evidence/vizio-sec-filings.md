@@ -11,11 +11,32 @@ into two segments:
 - **Device** — selling televisions and soundbars
 - **Platform+** — advertising, data licensing, and the SmartCast operating system
 
-## The finding
+## The finding, with the numbers
 
-Across multiple reported periods, **Platform+ generated more gross profit than Device**, despite
-Device producing far larger revenue. In some quarters Platform+ gross profit was several times
-Device gross profit, and Device gross margin ran in the low single digits.
+Full year **2022**, from VIZIO's own segment reporting (millions of dollars):
+
+| | Device | Platform+ |
+|---|---|---|
+| Net revenue | 1,384.9 | 477.9 |
+| Gross profit | **16.0** | **296.5** |
+| Gross margin | 1.2% | 62.0% |
+
+Read that twice. **The hardware business sold 2.9 times as much revenue as the advertising business
+and earned one eighteenth as much gross profit.** Platform+ was **95% of VIZIO's total gross
+profit** ($296.5M of $312.5M) on a quarter of its revenue.
+
+It was not a one-year anomaly, and it was not a loss-making blip — 2021 points the same way, less
+extremely:
+
+| Full year 2021 | Device | Platform+ |
+|---|---|---|
+| Net revenue | 1,815.3 | 308.7 |
+| Gross profit | 115.7 | 210.6 |
+| Gross margin | 6.4% | 68.2% |
+
+Between the two years, Device gross profit fell 86% while Platform+ gross profit rose 41%. The 10-K
+attributes the Device collapse to "more competitive pricing" on smart TVs — that is, the set got
+cheaper and the data business carried the company.
 
 Stated plainly: **the television is sold at close to cost, and the profit is in what the television
 does to you afterwards.** The hardware is customer acquisition.
@@ -25,11 +46,16 @@ Securities and Exchange Commission.
 
 ## Read it yourself
 
-- SEC EDGAR full-text search for **VIZIO Holding Corp**, CIK filings
-- The **Form S-1** (2021) risk factors and MD&A sections
-- Any **10-Q** or **10-K** from 2021–2023, segment reporting note
+- **FY2022 Form 10-K**, VIZIO Holding Corp. (CIK 0001835591) — segment reporting and MD&A:
+  [sec.gov](https://www.sec.gov/Archives/edgar/data/1835591/000183559123000022/vzio-20221231.htm).
+  The gross margin percentages are in MD&A; the revenue and gross profit lines are in the segment note.
+- **Q4 2022 earnings release** (Exhibit 99.1), same figures in one table:
+  [sec.gov](https://www.sec.gov/Archives/edgar/data/1835591/000183559123000018/exhibit991-q42022.htm)
+- Any other **10-Q** or **10-K** from 2021–2023: look for the phrase "Platform+" and read the gross
+  profit line next to Device.
 
-Look for the phrase "Platform+" and read the gross profit line next to Device.
+Quarterly figures swing — ad revenue is seasonal and Q4 is not Q2. Quote the **full-year** numbers
+above, with the period attached, and nobody can wave them away as a cherry-picked quarter.
 
 ## Why this is the most persuasive document in the repo
 
@@ -39,10 +65,3 @@ connected TV — it is the reason the TV costs what it costs.
 
 Once you know that, the four-minute version in the README stops looking paranoid and starts looking
 like declining an upsell.
-
----
-
-*Needs verification by a contributor: specific gross profit figures per quarter. This file
-deliberately states the qualitative finding, which is robust across periods, rather than a single
-number that a reader might check against a different quarter and conclude the repo is wrong. If you
-add figures, cite the exact filing and period.*

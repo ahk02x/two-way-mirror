@@ -6,7 +6,7 @@ folder holds the receipts.
 
 | File | What it establishes |
 |---|---|
-| [ftc-vizio-2017.md](ftc-vizio-2017.md) | A regulator proved it in court and a manufacturer paid |
+| [ftc-vizio-2017.md](ftc-vizio-2017.md) | Two regulators sued, the manufacturer settled and paid, and the order set the opt-in rule |
 | [vizio-sec-filings.md](vizio-sec-filings.md) | A manufacturer told its investors the data is worth more than the TV |
 | [research.md](research.md) | Independent measurement of what these devices actually transmit |
 

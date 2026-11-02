@@ -8,8 +8,9 @@ including your game console, your laptop over HDMI, and the DVD you own — matc
 reference database, and sends the result to the manufacturer. That record is joined to your IP
 address and sold to advertisers and data brokers.
 
-This is not a theory or a worst case. The US Federal Trade Commission sued VIZIO over exactly this
-in 2017 and won. See [evidence/](evidence/) for the filings, the SEC disclosures where a TV maker
+This is not a theory or a worst case. The US Federal Trade Commission and the State of New Jersey
+sued VIZIO over exactly this in 2017; VIZIO settled for $2.2 million and was ordered to get opt-in
+consent and delete what it had taken. See [evidence/](evidence/) for the filings, the SEC disclosures where a TV maker
 tells its own investors that selling your viewing data is more profitable than selling you the TV,
 and the peer-reviewed measurement studies.
 
