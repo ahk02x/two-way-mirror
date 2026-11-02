@@ -1,4 +1,4 @@
-# Unwatched
+# Two-Way Mirror
 
 > Practical, current instructions for turning off surveillance features in consumer televisions and
 > streaming devices — automatic content recognition (ACR), telemetry, and interest-based

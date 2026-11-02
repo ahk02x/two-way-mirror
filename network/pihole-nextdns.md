@@ -12,7 +12,7 @@ half; making the TV actually use that resolver is the half that decides whether 
 `Adlists` → add the raw URL → `Tools` → `Update Gravity`
 
 ```
-https://raw.githubusercontent.com/ahk02x/unwatched/main/network/dns-blocklist.txt
+https://raw.githubusercontent.com/ahk02x/two-way-mirror/main/network/dns-blocklist.txt
 ```
 
 Pi-hole ignores `#` comments, so the tiering notes are safe to leave in — but note that this

@@ -1,5 +1,5 @@
-# Unwatched — smart TV telemetry, ACR and advertising hostnames
-# CC0 1.0 / public domain. https://github.com/ahk02x/unwatched
+# Two-Way Mirror — smart TV telemetry, ACR and advertising hostnames
+# CC0 1.0 / public domain. https://github.com/ahk02x/two-way-mirror
 #
 # TIERS
 #   Tier 1 — ACR, ad and analytics endpoints. Blocking these has no reported effect on playback.

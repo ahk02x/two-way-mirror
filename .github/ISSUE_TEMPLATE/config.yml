@@ -1,5 +1,5 @@
 blank_issues_enabled: true
 contact_links:
   - name: Out of scope
-    url: https://github.com/ahk02x/unwatched/blob/main/SCOPE.md
+    url: https://github.com/ahk02x/two-way-mirror/blob/main/SCOPE.md
     about: "Before opening an issue about devices you do not own, DRM, or piracy — please read the scope."

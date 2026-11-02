@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate the Unwatched dataset.
+"""Validate the Two-Way Mirror dataset.
 
 Checks that data/brands.yaml is well-formed, that every brand points at a doc that exists,
 that every telemetry host named in the dataset also appears in the blocklist, and that the

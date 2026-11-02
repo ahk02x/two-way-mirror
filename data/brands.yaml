@@ -1,5 +1,5 @@
-# Unwatched — machine-readable brand data
-# CC0 1.0 / public domain. https://github.com/ahk02x/unwatched
+# Two-Way Mirror — machine-readable brand data
+# CC0 1.0 / public domain. https://github.com/ahk02x/two-way-mirror
 #
 # This file is the structured mirror of the brands/*.md pages. It exists so that tools, scripts,
 # search indexes and language models can consume the data without parsing prose.
